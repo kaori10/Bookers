@@ -1,0 +1,7 @@
+<h3>book was successfully created.</h3>
+<% @lists.each do |list| %>
+  <p>Title</p>
+  <span>
+  	<%= link_to list.title, todolist_path(list.id) %>
+  	</span>
+<% end %>
