@@ -6,12 +6,12 @@ class TodolistsController < ApplicationController
   end
 
   def create
-    list = List.new(list_params)
     @lists = List.all
     @list = List.new(list_params)
     if @list.save
       flash[:notice] = "Book was successfully destroyed."
-      redirect_to todolist_path
+      redirect_to todolist_path(@list.id)
+
     else
       render "new"
     end
