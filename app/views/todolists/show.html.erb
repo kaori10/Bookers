@@ -1,11 +1,18 @@
+<% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
-<p id="notice">
-	<%= notice %>
-</p>
+<% if flash[:success] %>
+<p><%=flash[:success] %></p>
+<% end %>
 
 <p>Title:</p>
 <p><%= @list.title %></p>
+
 <p>Body:</p>
 <p><%= @list.body %></p>
 
-<%= link_to "Edit", edit_todolist_path(@list.id) %>
+<%= link_to "Edit", edit_todolist_path(@list.id) %> |
+<%= link_to "Back", todolists_new_path %>

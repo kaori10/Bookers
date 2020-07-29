@@ -9,7 +9,7 @@ class TodolistsController < ApplicationController
     @lists = List.all
     @list = List.new(list_params)
     if @list.save
-      flash[:notice] = "Book was successfully destroyed."
+      flash[:notice] = "Book was successfully created."
       redirect_to todolist_path(@list.id)
 
     else
@@ -32,12 +32,14 @@ class TodolistsController < ApplicationController
   def update
     list = List.find(params[:id])
     list.update(list_params)
+    flash[:success] = "Book was successfully updated."
     redirect_to todolist_path(list.id)
   end
 
   def destroy
     list = List.find(params[:id])
     list.destroy
+    flash[:success] = "Book was successfully destroyed."
     redirect_to todolists_new_path
   end
 

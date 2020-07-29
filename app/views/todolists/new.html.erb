@@ -1,5 +1,9 @@
 <h1>Books</h1>
 
+<% if flash[:success] %>
+<p><%=flash[:success] %></p>
+<% end %>
+
 <table>
 <thead>
 <tr>
@@ -37,7 +41,7 @@
 <%= @list.errors.count %>errors prohibited this book from being saved:
 <br>
 <% @list.errors.full_messages.each do |message| %>
-<%= message %><br>
+･<%= message %><br>
 <% end %>
 <% end %>
 
